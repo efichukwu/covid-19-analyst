@@ -1,8 +1,6 @@
 const covid19ImpactEstimator = (data) => {
   // Destructuring input
-  const {
-    region, periodType, timeToElapse, reportedCases, totalHospitalBeds
-  } = data;  
+  const {region, periodType, timeToElapse, reportedCases, totalHospitalBeds} = data;  
   // Output Properties
   const impact = {};
   const severeImpact = {};
