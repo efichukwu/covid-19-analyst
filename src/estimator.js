@@ -2,10 +2,8 @@ const covid19ImpactEstimator = (data) => {
   // Destructuring input
   const {
     region, periodType, timeToElapse, reportedCases, totalHospitalBeds
-  } = data;
-  
+  } = data;  
   // Output Properties
-  
   const impact = {};
   const severeImpact = {};
   // Functions
@@ -19,9 +17,7 @@ const covid19ImpactEstimator = (data) => {
     }
     return timeToElapse;
   }
-  
   // Estimator Function
-  
   function calcEstimate() {
     const days = getDays();
     this.infectionsByRequestedTime = this.currentlyInfected * (2 ** Math.trunc(days / 3));
@@ -34,9 +30,7 @@ const covid19ImpactEstimator = (data) => {
     const avgCost = Number(avgDailyIncomeInUSD) * Number(avgDailyIncomePopulation);
     this.dollarsInFlight = Math.trunc((this.infectionsByRequestedTime * avgCost) / days);
   }
-  
   // ----- Object properties -------
-  
   impact.currentlyInfected = Math.trunc(Number(reportedCases) * 10);
   severeImpact.currentlyInfected = Math.trunc(Number(reportedCases) * 50);
   // Infections By Request Time Property
@@ -49,5 +43,5 @@ const covid19ImpactEstimator = (data) => {
     severeImpact
   };
   return output;
-};
+ };
 export default covid19ImpactEstimator;
