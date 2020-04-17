@@ -1,9 +1,9 @@
 const covid19ImpactEstimator = (data) => {
   // Destructuring input
   const {
-    region,periodType,timeToElapse,reportedCases,totalHospitalBeds
-  }=data;  
-  // Output Properties
+    region, periodType, timeToElapse, reportedCases, totalHospitalBeds
+  } = data;
+    // Output Properties
   const impact = {};
   const severeImpact = {};
   // Functions
@@ -44,4 +44,4 @@ const covid19ImpactEstimator = (data) => {
   };
   return output;
 };
-export default covid19ImpactEstimator;
+module.exports = covid19ImpactEstimator;
